@@ -13,6 +13,12 @@ module.exports = function (eleventyConfig) {
 		fs.readFileSync(path.join(__dirname, "public/css/index.css"), "utf8"),
 	);
 
+	eleventyConfig.addFilter("absoluteUrl", (pathValue, base) => {
+		const baseWithSlash = base.endsWith("/") ? base : `${base}/`;
+		const relative = String(pathValue).replace(/^\//, "");
+		return `${baseWithSlash}${relative}`;
+	});
+
 	eleventyConfig.setBrowserSyncConfig({
 		callbacks: {
 			ready: function (_err, browserSync) {
