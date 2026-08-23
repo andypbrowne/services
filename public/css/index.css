@@ -355,7 +355,7 @@ a[href]:active {
 
 .fit {
 	display: grid;
-	gap: 0.5rem 2.5rem;
+	gap: 1.5rem 2.5rem;
 	background: var(--color-aside);
 	border-radius: var(--border-radius);
 	padding: var(--panel-padding);
@@ -516,13 +516,24 @@ a.action-pill:focus-visible {
 .deeper ul {
 	list-style: none;
 	margin: 0;
+	margin-inline: -1rem;
 	padding: 0;
-	display: grid;
-	gap: 1.4rem;
+	display: flex;
+	overflow: scroll;
+	overflow-x: scroll;
+	scroll-snap-type: x mandatory;
+	-webkit-overflow-scrolling: touch;
 }
 
 .deeper li {
 	margin: 0;
+	min-width: 80vw;
+	scroll-snap-align: start;
+	padding-inline-start: 1rem;
+}
+
+.deeper li:last-child {
+	margin-inline-end: 1rem;
 }
 
 .deeper a {
@@ -551,8 +562,22 @@ a.action-pill:focus-visible {
 
 @media screen and (min-width: 650px) {
 	.deeper ul {
+		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		gap: 1rem;
+		margin-inline: 0;
+		overflow: visible;
+		scroll-snap-type: none;
+	}
+
+	.deeper li {
+		min-width: auto;
+		scroll-snap-align: none;
+		padding-inline-start: 0;
+	}
+
+	.deeper li:last-child {
+		margin-inline-end: 0;
 	}
 }
 
