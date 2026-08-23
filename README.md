@@ -1,6 +1,6 @@
-# Offer 1-pagers
+# Services 1-pagers
 
-Eleventy site for [workshops.andypbrowne.com](https://workshops.andypbrowne.com/) and [sites.andypbrowne.com](https://sites.andypbrowne.com/), hosted on Netlify.
+Eleventy site for multiple 1-page sites, hosted on Netlify.
 
 ## Quick start
 
