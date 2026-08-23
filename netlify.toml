@@ -14,3 +14,40 @@
 	for = "/fonts/*"
 	[headers.values]
 		Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+	from = "https://workshops.andypbrowne.com/img/*"
+	to = "/img/:splat"
+	status = 200
+	force = true
+
+[[redirects]]
+	from = "https://workshops.andypbrowne.com/fonts/*"
+	to = "/fonts/:splat"
+	status = 200
+	force = true
+
+[[redirects]]
+	from = "https://workshops.andypbrowne.com/*"
+	to = "/workshops/:splat"
+	status = 200
+	force = true
+
+[[redirects]]
+	from = "https://sites.andypbrowne.com/img/*"
+	to = "/img/:splat"
+	status = 200
+	force = true
+
+[[redirects]]
+	from = "https://sites.andypbrowne.com/fonts/*"
+	to = "/fonts/:splat"
+	status = 200
+	force = true
+
+[[redirects]]
+	from = "https://sites.andypbrowne.com/*"
+	to = "/sites/:splat"
+	status = 200
+	force = true
+

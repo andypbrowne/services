@@ -8,24 +8,28 @@
 		<meta name="theme-color" content="#101C27" media="(prefers-color-scheme: dark)">
 		<title>{{ title or metadata.title }}</title>
 		<meta name="description" content="{{ description or metadata.description }}">
+		{% set canonicalUrl = pageUrl or canonical or metadata.url %}
+		{% set ogImageSrc = ogImage or metadata.ogImage %}
+		{% set ogImageAltText = ogImageAlt or metadata.ogImageAlt %}
+		{% set ogImageAbsolute = ogImageSrc | absoluteUrl(canonicalUrl) %}
 		{% if noindex %}
 		<meta name="robots" content="noindex">
 		{% else %}
-		<link rel="canonical" href="{{ metadata.url }}">
+		<link rel="canonical" href="{{ canonicalUrl }}">
 		<meta property="og:title" content="{{ title or metadata.title }}">
 		<meta property="og:type" content="website">
 		<meta property="og:description" content="{{ description or metadata.description }}">
-		<meta property="og:url" content="{{ metadata.url }}">
+		<meta property="og:url" content="{{ canonicalUrl }}">
 		<meta property="og:locale" content="en_US">
-		<meta property="og:image" content="{{ metadata.url }}img/OG/thumb-workshops.png">
+		<meta property="og:image" content="{{ ogImageAbsolute }}">
 		<meta property="og:image:width" content="{{ metadata.ogImageWidth }}">
 		<meta property="og:image:height" content="{{ metadata.ogImageHeight }}">
-		<meta property="og:image:alt" content="{{ metadata.ogImageAlt }}">
+		<meta property="og:image:alt" content="{{ ogImageAltText }}">
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:title" content="{{ title or metadata.title }}">
 		<meta name="twitter:description" content="{{ description or metadata.description }}">
-		<meta name="twitter:image" content="{{ metadata.url }}img/OG/thumb-workshops.png">
-		<meta name="twitter:image:alt" content="{{ metadata.ogImageAlt }}">
+		<meta name="twitter:image" content="{{ ogImageAbsolute }}">
+		<meta name="twitter:image:alt" content="{{ ogImageAltText }}">
 		{% endif %}
 
 		<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
@@ -48,7 +52,7 @@
 		</main>
 
 		<footer>
-			<p>Andy Garber-Browne · NY Metro · <a href="https://andypbrowne.com/">andypbrowne.com</a></p>
+			<p>Andy Garber-Browne · <a href="https://andypbrowne.com/">andypbrowne.com</a></p>
 		</footer>
 	</body>
 </html>
