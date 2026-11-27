@@ -45,6 +45,14 @@
 
 		<header>
 			<a href="https://andypbrowne.com/" class="home-link">Andy Garber-Browne</a>
+			{% if deploy.showBadge %}
+			<span class="branch-status">
+				<span class="branch-label">Feature branch: {{ deploy.branch }}</span>
+				<a class="deploy-badge" href="https://app.netlify.com/projects/sites-service/deploys">
+					<img src="https://api.netlify.com/api/v1/badges/95a936c3-e7e5-4df4-bad0-0aff1017e0d9/deploy-status" alt="Netlify deploy status" width="130" height="20">
+				</a>
+			</span>
+			{% endif %}
 		</header>
 
 		<main id="skip" tabindex="-1">
