@@ -176,7 +176,44 @@ a.skip-link:focus-visible {
 }
 
 header {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.75rem;
 	padding: 0.2rem 0 2rem;
+}
+
+.branch-status {
+	display: inline-flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.branch-label {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.15rem 0.7rem;
+	border-radius: 2rem;
+	border: 1px solid var(--subtle-border);
+	background: color-mix(in oklab, var(--color-midnight-80) 8%, transparent);
+	color: var(--color-midnight-60);
+	font-size: var(--font-size-sm);
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+.deploy-badge {
+	display: inline-flex;
+	align-items: center;
+	line-height: 0;
+	text-decoration: none;
+}
+
+.deploy-badge img {
+	display: block;
+	height: 1.25rem;
+	width: auto;
 }
 
 @media screen and (min-width: 650px) {
